@@ -23,7 +23,7 @@ main{
 }
 #bar p{
     align-self: center;
-    font-size: 20px;
+    padding-left: 5px;
 }
 #bar-button{
     display: flex;
@@ -92,9 +92,10 @@ main{
 #dis-icon2 p{
     font-size: 20px;
 }
+
 /* check thisssssssssssssssssssss */
 #test{
-    display: none;
+    visibility: hidden;
     align-self: center;
     padding-right: 5px;
 }
@@ -130,8 +131,7 @@ main{
 
 /* check thisssssssssssssssssssss */
 #memory-2 p{
-    /* background-color: black; */
-    /* display: none; */
+    visibility: hidden;
 }
 
 /* ------------------- keyboard --------------------- */
@@ -158,6 +158,9 @@ main{
 .color-gray {
     background-color: #F5F5F5;
     font-size: 16px;
+}
+.set-font-size{
+    font-size: 26px;
 }
 #keyboard span:hover{
     background-color: #D3D3D3;
