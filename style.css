@@ -140,9 +140,32 @@ main{
 
 /* ------------------- keyboard --------------------- */
 #keyboard{
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
     border: 1px solid black;
     width: 100%;
     height: 70%;
+}
+#keyboard span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #F0F0F0;
+    width: 20%;
+}
+.color-white {
+    background-color: #FEFEFE;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.color-gray {
+    background-color: #F5F5F5;
+    font-size: 16px;
+}
+#keyboard span:hover{
+    background-color: #D3D3D3;
 }
 
 /* ------------------- history --------------------- */
