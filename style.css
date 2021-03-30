@@ -1,4 +1,30 @@
 body{
     box-sizing: border-box;
     margin : 0; 
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ---------------------- bar --------------------- */
+#bar{
+    border: 1px solid black;
+    
+}
+
+
+/* ------------------- display --------------------- */
+#display{
+    border: 1px solid red;
+}
+
+
+/* ------------------- keyboard --------------------- */
+#keyboard{
+    border: 1px solid black;
+}
+
+
+/* ------------------- history --------------------- */
+#history{
+    border: 1px solid green;
 }
