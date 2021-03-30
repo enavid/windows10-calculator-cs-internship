@@ -1,30 +1,61 @@
 body{
     box-sizing: border-box;
-    margin : 0; 
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1F1;
+    font-family: 'Noto Sans', sans-serif; 
     width: 100vw;
     height: 100vh;
+
+
+}
+main{
+    display: flex;
+    flex-direction: row;
+}
+/* ------------------- container --------------------- */
+#container-1{
+    width: 69vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#container-2{
+    width: 30vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: row;
 }
 
 /* ---------------------- bar --------------------- */
 #bar{
     border: 1px solid black;
-    
-}
 
+}
 
 /* ------------------- display --------------------- */
 #display{
     border: 1px solid red;
+    width: 100%;
+    height: 30%;
+
 }
 
 
 /* ------------------- keyboard --------------------- */
 #keyboard{
     border: 1px solid black;
+    width: 100%;
+    height: 70%;
 }
 
 
 /* ------------------- history --------------------- */
 #history{
+    width: 100%;
+    height: 100%;
     border: 1px solid green;
 }
+
+
