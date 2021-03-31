@@ -59,19 +59,17 @@ main {
 
 /* ------------------- container --------------------- */
 #container-1 {
-    /* width: 70%;
-    height: 100%; */
+    width: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    flex: 3;
 }
 
 #container-2 {
-    /* width: 30%;
-    height: 100%; */
+    width: 30%;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    flex: 1;
 }
 
 /* ------------------- display --------------------- */
@@ -130,11 +128,12 @@ main {
     padding-right: 15px;
 }
 
+/* check thissssssssssssssssssssssss */
 #dis-button {
     display: flex;
     justify-content: space-between;
     height: 20%;
-    width: 400px;
+    /* width: 500px; */
 }
 
 #dis-button p {
@@ -142,12 +141,20 @@ main {
 }
 
 #memory-1 {
+    border: 1px solid red;
+    width: 84%;
     display: flex;
-    justify-content: center;
-    /* align-items: center; */
+    justify-content: space-around;
 }
 
-/* check thisssssssssssssssssssss */
+#memory-2 {
+    visibility: hidden;
+    border: 1px solid green;
+    justify-content: center;
+    width: 16%;
+}
+
+
 #memory-2 p {
     visibility: hidden;
 }
@@ -215,6 +222,42 @@ main {
     padding: 5px;
 }
 
+/* width= 500px history disppear and keyboard change and history icon , M memory appear*/
+@media only screen and (max-width: 500px) {
+    #container-1 {
+        width: 100%;
+    }
+
+    #container-2 {
+        display: none;
+    }
+
+    #dis-history {
+        visibility: visible;
+    }
+
+    #memory-2 p {
+        visibility: visible;
+    }
+
+    #dis-button {
+        width: auto;
+    }
+}
+
+/* width = 740px sidebar starts to decrease */
+@media only screen and (min-width: 740px) {
+    #container-1 {
+        flex-grow: 3;
+    }
+
+    #container-2 {
+        background-color: red;
+        width: 320px;
+    }
+}
+
+
 /* width = 1024px keyboard change */
 @media only screen and (max-width: 1024px) {
     #keyboard {
@@ -229,29 +272,6 @@ main {
     .row-1 {
         grid-area: 1;
     }
-}
-
-/* width = 740px sidebar starts to decrease */
-@media only screen and (min-width: 740px) {
-    #container-2 {
-        max-width: 320px;
-    }
-}
-
-/* width= 500px history disppear and keyboard change and history icon appear*/
-@media only screen and (max-width: 580px) {
-    #container-1 {
-        width: 100vw;
-    }
-
-    #container-2 {
-        display: none;
-    }
-
-    #dis-history {
-        visibility: visible;
-    }
-
 }
 
 /* hight = 620px chagne keyboard */
