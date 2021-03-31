@@ -111,8 +111,7 @@ main {
     font-size: 20px;
 }
 
-/* check thisssssssssssssssssssss */
-#test {
+#dis-history {
     visibility: hidden;
     align-self: center;
     padding-right: 5px;
@@ -242,7 +241,7 @@ main {
     }
 }
 
-/* width= 500px history disppear and keyboard change*/
+/* width= 500px history disppear and keyboard change and history icon appear*/
 @media only screen and (max-width: 580px) {
     #container-1 {
         width: 100vw;
@@ -251,6 +250,11 @@ main {
     #container-2 {
         display: none;
     }
+
+    #dis-history {
+        visibility: visible;
+    }
+
 }
 
 /* hight = 620px chagne keyboard */
