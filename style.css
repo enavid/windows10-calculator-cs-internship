@@ -50,7 +50,7 @@ main{
 }
 /* ------------------- container --------------------- */
 #container-1{
-    width: 70vw;
+    width: 85vw;
     height: 95vh;
     display: flex;
     flex-direction: column;
@@ -148,7 +148,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1.5px solid #F0F0F0;
+    border: 2px solid #F0F0F0;
     width: 20%;
 }
 .color-white {
@@ -191,6 +191,26 @@ main{
 #his-message{
     font-weight: bold;
     padding: 5px;
+}
+/* width = 1024px keyboard change */
+
+/* width = 740px sidebar starts to decrease */
+@media only screen and (min-width: 740px){
+    #container-2{
+        /* background-color: black; */
+        width: 320px;
+    }
+}
+
+/* width= 500px history disppear and keyboard change*/
+@media only screen and (max-width: 500px){
+    #container-1{
+        width: 100vw;
+    }
+    #container-2{
+        /* background-color: black; */
+        display: none;
+    }
 }
 
 
