@@ -252,3 +252,19 @@ main {
         display: none;
     }
 }
+
+/* hight = 620px chagne keyboard */
+@media only screen and (max-height: 620px) {
+    #keyboard {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+
+    #disappear {
+        display: none !important;
+    }
+
+    .row-1 {
+        grid-area: 1;
+    }
+}
