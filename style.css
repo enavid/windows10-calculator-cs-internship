@@ -7,19 +7,19 @@
 
 body {
     background-color: #E8E8E8;
-    width: 100vw;
-    height: 100vh;
 }
 
 main {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 95vh;
 }
 
 /* ---------------------- bar --------------------- */
 #bar {
-    height: 5vh;
     width: 100vw;
+    height: 5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,7 +42,6 @@ main {
     align-items: center;
     font-weight: bold;
     font-size: 18px;
-
 }
 
 #mini:hover {
@@ -60,17 +59,19 @@ main {
 
 /* ------------------- container --------------------- */
 #container-1 {
-    width: 85vw;
-    height: 95vh;
+    /* width: 70%;
+    height: 100%; */
     display: flex;
     flex-direction: column;
+    flex: 3;
 }
 
 #container-2 {
-    width: 30vw;
-    height: 95vh;
+    /* width: 30%;
+    height: 100%; */
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 /* ------------------- display --------------------- */
@@ -220,27 +221,34 @@ main {
 
 /* width = 1024px keyboard change */
 @media only screen and (max-width: 1024px) {
-    body {
-        background-color: red;
+    #keyboard {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+
+    #disappear {
+        display: none !important;
+    }
+
+    .row-1 {
+        grid-area: 1;
     }
 }
 
 /* width = 740px sidebar starts to decrease */
 @media only screen and (min-width: 740px) {
     #container-2 {
-        /* background-color: black; */
-        width: 320px;
+        max-width: 320px;
     }
 }
 
 /* width= 500px history disppear and keyboard change*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 580px) {
     #container-1 {
         width: 100vw;
     }
 
     #container-2 {
-        /* background-color: black; */
         display: none;
     }
 }
