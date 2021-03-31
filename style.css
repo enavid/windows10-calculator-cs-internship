@@ -273,7 +273,7 @@ main {
 }
 
 /* hight = 620px chagne keyboard */
-@media only screen and (max-height: 620px) {
+    {
     #keyboard {
         grid-template-columns: repeat(4, auto);
         grid-template-rows: repeat(6, auto);
