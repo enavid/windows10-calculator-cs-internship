@@ -64,6 +64,7 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 2;
+    font-size: 20px;
 }
 
 #container-2 {
@@ -186,16 +187,26 @@ main {
 
 .color-gray {
     background-color: #F5F5F5;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .set-font-size {
-    font-size: 26px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#test{
+    border: 1px solid red;
+    background-color: red;
+    /* vertical-align: sub; */
 }
 
 #keyboard span:hover {
     background-color: #D3D3D3;
 }
+sup {
+    font-size:xx-small;
+     vertical-align:super;
+    }
 
 /* ------------------- history --------------------- */
 #history {
