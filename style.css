@@ -64,7 +64,6 @@ main {
     display: flex;
     flex-direction: column;
     flex-grow: 2;
-    font-size: 20px;
 }
 
 #container-2 {
@@ -134,7 +133,6 @@ main {
     display: flex;
     justify-content: space-between;
     height: 20%;
-    max-width: 500px;
 }
 
 #dis-button p {
@@ -142,21 +140,16 @@ main {
 }
 
 #memory-1 {
-    width: 84%;
+    max-width: 680px;
+    width: 100%;
     display: flex;
     justify-content: space-around;
 }
 
 #memory-2 {
     visibility: hidden;
-    border: 1px solid green;
     justify-content: center;
-    width: 16%;
-}
-
-
-#memory-2 p {
-    visibility: hidden;
+    width: 0px;   
 }
 
 .deactivate {
@@ -193,11 +186,6 @@ main {
 .set-font-size {
     font-size: 20px;
     font-weight: bold;
-}
-#test{
-    border: 1px solid red;
-    background-color: red;
-    /* vertical-align: sub; */
 }
 
 #keyboard span:hover {
@@ -253,9 +241,13 @@ sup {
     #dis-history {
         visibility: visible;
     }
+    #memory-1{
+        width: 86%;
+    }
 
-    #memory-2 p {
+    #memory-2{
         visibility: visible;
+        width: 16%;
     }
 
     #dis-button {
