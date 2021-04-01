@@ -219,6 +219,10 @@ main {
     padding: 10px;
     margin: 5px;
 }
+#his-p{
+    padding-bottom: 0px;
+    border-bottom: 5px solid orange;
+}
 
 #his-message {
     font-weight: bold;
