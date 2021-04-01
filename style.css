@@ -75,7 +75,6 @@ main {
 
 /* ------------------- display --------------------- */
 #display {
-    border: 1px solid black;
     width: 100%;
     height: 30%;
 }
@@ -88,7 +87,6 @@ main {
 #dis-icon1 {
     height: 20%;
     display: flex;
-    border: 1px solid green;
     justify-content: space-between;
 }
 
@@ -119,7 +117,6 @@ main {
 }
 
 #dis-number {
-    border: 1px solid indianred;
     display: flex;
     height: 60%;
     justify-content: flex-end;
@@ -133,7 +130,6 @@ main {
 }
 
 #dis-button {
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     height: 20%;
