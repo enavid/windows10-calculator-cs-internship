@@ -243,6 +243,7 @@ sup {
 
     #memory-2{
         visibility: visible;
+        align-self: center;
         width: 16%;
     }
 
