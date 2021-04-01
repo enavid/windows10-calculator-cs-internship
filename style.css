@@ -133,6 +133,7 @@ main {
     display: flex;
     justify-content: space-between;
     height: 20%;
+    font-weight: bold;
 }
 #memory-1 {
     max-width: 680px;
@@ -170,7 +171,7 @@ main {
 
 .color-white {
     background-color: #FEFEFE;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -180,7 +181,7 @@ main {
 }
 
 .set-font-size {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
 }
 
