@@ -7,7 +7,6 @@ export default { render, renderZero };
 //=========================== Define display function ===================
 
 function render(value) {
-
     disp.innerHTML = value;
 }
 function renderZero() {

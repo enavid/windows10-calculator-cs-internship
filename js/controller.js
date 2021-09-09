@@ -31,4 +31,10 @@ _keyBoard.addEventListener('sqrt', () => {
     _display.render(input);
 })
 
+_keyBoard.addEventListener('power', () => {
+    input = Math.pow(input, 2).toString();
+    _display.render(input);
+})
+
+
 // ========================== Define control function ==================

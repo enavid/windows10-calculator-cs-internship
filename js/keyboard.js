@@ -15,6 +15,7 @@ keyboard.addEventListener('click', (e) => {
     if (value === 'clear' && _eventHandler['clear']) { return _eventHandler['clear']() };
     if (value === 'eclear' && _eventHandler['eclear']) { return _eventHandler['eclear']() };
     if (value === 'sqrt' && _eventHandler['sqrt']) { return _eventHandler['sqrt']() };
+    if (value === 'power' && _eventHandler['power']) { return _eventHandler['power']() };
     if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
 
