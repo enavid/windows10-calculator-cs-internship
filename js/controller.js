@@ -5,6 +5,7 @@ let input = '';
 
 //=========================== control event listener ====================
 _keyBoard.addEventListener('number', (number) => {
+    if (input == '' && number == 0) return;
     input = input + number;
     console.log(input);
     _display.render(input);
