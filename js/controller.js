@@ -61,20 +61,38 @@ _keyBoard.addEventListener('division', () => {
     sign = '/';
 })
 
+_keyBoard.addEventListener('sum', () => {
+    toggleNumber();
+    sign = '+';
+})
+
+_keyBoard.addEventListener('minus', () => {
+    toggleNumber();
+    sign = '-';
+})
+
 _keyBoard.addEventListener('equal', () => {
     switch (sign) {
         case '*': {
-            second_number = first_number * second_number;
+            first_number = first_number * second_number;
             break;
         }
         case '/': {
             if (first_number == 0) return;
-            second_number = second_number / first_number;
+            first_number = second_number / first_number;
+            break;
+        }
+        case '+': {
+            first_number = parseInt(first_number) + parseInt(second_number);
+            break;
+        }
+        case '-': {
+            first_number = parseInt(second_number) - parseInt(first_number);
             break;
         }
     }
-    _display.render(second_number);
-    console.log(second_number)
+    _display.render(first_number);
+    console.log(first_number)
 })
 
 // ========================== Define control function ==================

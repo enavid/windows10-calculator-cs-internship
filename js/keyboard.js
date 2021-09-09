@@ -20,6 +20,8 @@ keyboard.addEventListener('click', (e) => {
     if (value === 'equal' && _eventHandler['equal']) { return _eventHandler['equal']() };
     if (value === 'multiply' && _eventHandler['multiply']) { return _eventHandler['multiply']() };
     if (value === 'division' && _eventHandler['division']) { return _eventHandler['division']() };
+    if (value === 'sum' && _eventHandler['sum']) { return _eventHandler['sum']() };
+    if (value === 'minus' && _eventHandler['minus']) { return _eventHandler['minus']() };
     if (value === 'oneDivision' && _eventHandler['oneDivision']) { return _eventHandler['oneDivision']() };
     if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
