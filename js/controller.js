@@ -11,6 +11,12 @@ _keyBoard.addEventListener('number', (number) => {
     _display.render(input);
 })
 
+_keyBoard.addEventListener('dot', () => {
+    if (input.includes('.') || input == '') return;
+    input = input + '.';
+    _display.render(input);
+})
+
 _keyBoard.addEventListener('back', () => {
     input = input.slice(0, -1);
     if (input == '') { return _display.renderZero() };
