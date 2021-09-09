@@ -1,9 +1,14 @@
 import _display from './display.js';
 import _keyBoard from './keyboard.js';
 
+let temp = '';
+const input = [];
 
-_display.render(100)
-
+//=========================== control event listener ====================
 _keyBoard.addEventListener('number', (number) => {
-    console.log('controller', number);
+    temp = temp + number;
+    console.log(temp);
+    _display.render(temp)
 })
+
+// ========================== Define control function ==================
