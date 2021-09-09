@@ -124,7 +124,7 @@ main {
 }
 
 #dis-number p {
-    font-size: 64px;
+    font-size: 32px;
     font-weight: bold;
     padding-right: 15px;
 }
@@ -135,6 +135,7 @@ main {
     height: 20%;
     font-weight: bold;
 }
+
 #memory-1 {
     max-width: 680px;
     width: 100%;
@@ -146,7 +147,7 @@ main {
 #memory-2 {
     visibility: hidden;
     justify-content: center;
-    width: 0px;   
+    width: 0px;
 }
 
 .deactivate {
@@ -187,10 +188,11 @@ main {
 #keyboard span:hover {
     background-color: #D3D3D3;
 }
+
 sup {
-    font-size:xx-small;
-     vertical-align:super;
-    }
+    font-size: xx-small;
+    vertical-align: super;
+}
 
 /* ------------------- history --------------------- */
 #history {
@@ -214,7 +216,8 @@ sup {
     padding: 10px;
     margin: 5px;
 }
-#his-p{
+
+#his-p {
     padding-bottom: 0px;
     border-bottom: 5px solid orange;
 }
@@ -237,11 +240,12 @@ sup {
     #dis-history {
         visibility: visible;
     }
-    #memory-1{
+
+    #memory-1 {
         width: 86%;
     }
 
-    #memory-2{
+    #memory-2 {
         visibility: visible;
         align-self: center;
         width: 16%;

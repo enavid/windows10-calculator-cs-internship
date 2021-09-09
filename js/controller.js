@@ -26,4 +26,9 @@ _keyBoard.addEventListener('eclear', () => {
     _display.renderZero();
 })
 
+_keyBoard.addEventListener('sqrt', () => {
+    input = Math.sqrt(input).toString();
+    _display.render(input);
+})
+
 // ========================== Define control function ==================
