@@ -12,8 +12,10 @@ keyboard.addEventListener('click', (e) => {
     const value = e.target.getAttribute('value');
 
     if (value === 'back' && _eventHandler['back']) { return _eventHandler['back']() };
+    if (value === 'clear' && _eventHandler['clear']) { return _eventHandler['clear']() };
     if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
+
 
 
 //=========================== Define keyboard function ===================

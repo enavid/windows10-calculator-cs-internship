@@ -16,4 +16,9 @@ _keyBoard.addEventListener('back', () => {
     _display.render(input);
 })
 
+_keyBoard.addEventListener('clear', () => {
+    input = '';
+    _display.renderZero();
+})
+
 // ========================== Define control function ==================
