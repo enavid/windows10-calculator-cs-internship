@@ -36,5 +36,11 @@ _keyBoard.addEventListener('power', () => {
     _display.render(input);
 })
 
+_keyBoard.addEventListener('oneDivision', () => {
+    if (input === 0) return;
+    input = 1 / input;
+    _display.render(input);
+})
+
 
 // ========================== Define control function ==================
