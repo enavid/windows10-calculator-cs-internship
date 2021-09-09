@@ -13,6 +13,7 @@ keyboard.addEventListener('click', (e) => {
 
     if (value === 'back' && _eventHandler['back']) { return _eventHandler['back']() };
     if (value === 'clear' && _eventHandler['clear']) { return _eventHandler['clear']() };
+    if (value === 'eclear' && _eventHandler['eclear']) { return _eventHandler['eclear']() };
     if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
 

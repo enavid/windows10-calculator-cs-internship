@@ -21,4 +21,9 @@ _keyBoard.addEventListener('clear', () => {
     _display.renderZero();
 })
 
+_keyBoard.addEventListener('eclear', () => {
+    input = '';
+    _display.renderZero();
+})
+
 // ========================== Define control function ==================
