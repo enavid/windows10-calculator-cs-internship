@@ -17,10 +17,12 @@ keyboard.addEventListener('click', (e) => {
     if (value === 'sqrt' && _eventHandler['sqrt']) { return _eventHandler['sqrt']() };
     if (value === 'power' && _eventHandler['power']) { return _eventHandler['power']() };
     if (value === 'dot' && _eventHandler['dot']) { return _eventHandler['dot']() };
+    if (value === 'equal' && _eventHandler['equal']) { return _eventHandler['equal']() };
+    if (value === 'multiply' && _eventHandler['multiply']) { return _eventHandler['multiply']() };
+    if (value === 'division' && _eventHandler['division']) { return _eventHandler['division']() };
     if (value === 'oneDivision' && _eventHandler['oneDivision']) { return _eventHandler['oneDivision']() };
     if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
-
 
 
 //=========================== Define keyboard function ===================
