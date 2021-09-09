@@ -6,15 +6,22 @@ const _eventHandler = {};
 export default { addEventListener };
 
 //=========================== Keyboard event listener ====================
-console.log(keyboard)
+
 keyboard.addEventListener('click', (e) => {
     e.preventDefault();
-    const number = e.target.getAttribute('value');
-    if (_eventHandler['number']) _eventHandler['number'](number);
+    const value = e.target.getAttribute('value');
+
+    if (value === 'back' && _eventHandler['back']) { return _eventHandler['back']() };
+    if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
 })
+
 
 //=========================== Define keyboard function ===================
 
 function addEventListener(option, callBack) {
     _eventHandler[option] = callBack;
+}
+
+function isNumber(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
 }
