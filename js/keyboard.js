@@ -8,7 +8,8 @@ export default {};
 console.log(keyboard)
 keyboard.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('yes')
+    const event = e.target.getAttribute('value');
+    console.log(event)
 })
 
 //=========================== Define keyboard function ===================
