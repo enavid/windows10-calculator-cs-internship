@@ -2,6 +2,9 @@ const get = document.getElementById.bind(document);
 const keyboard = get('keyboard');
 const _eventHandler = {};
 
+let keyboard_state = 0;
+let number = '';
+
 //================================ Keyboard API ===========================
 export default { addEventListener };
 
@@ -11,19 +14,25 @@ keyboard.addEventListener('click', (e) => {
     e.preventDefault();
     const value = e.target.getAttribute('value');
 
-    if (value === 'back' && _eventHandler['back']) { return _eventHandler['back']() };
-    if (value === 'clear' && _eventHandler['clear']) { return _eventHandler['clear']() };
-    if (value === 'eclear' && _eventHandler['eclear']) { return _eventHandler['eclear']() };
-    if (value === 'sqrt' && _eventHandler['sqrt']) { return _eventHandler['sqrt']() };
-    if (value === 'power' && _eventHandler['power']) { return _eventHandler['power']() };
-    if (value === 'dot' && _eventHandler['dot']) { return _eventHandler['dot']() };
-    if (value === 'equal' && _eventHandler['equal']) { return _eventHandler['equal']() };
-    if (value === 'multiply' && _eventHandler['multiply']) { return _eventHandler['multiply']() };
-    if (value === 'division' && _eventHandler['division']) { return _eventHandler['division']() };
-    if (value === 'sum' && _eventHandler['sum']) { return _eventHandler['sum']() };
-    if (value === 'minus' && _eventHandler['minus']) { return _eventHandler['minus']() };
-    if (value === 'oneDivision' && _eventHandler['oneDivision']) { return _eventHandler['oneDivision']() };
-    if (isNumber(value) && ['number']) { return _eventHandler['number'](value) };
+    if (isNumber(value)) {
+        number = number + value;
+        return _eventHandler.number(number);
+
+    } else if (isNumberOperator(value)) {
+
+        if (value === 'back' && number != '') {
+            number = number.substring(0, number.length - 1);
+            return _eventHandler.number(number);
+        }
+
+        if (value === 'clear' || value === 'eclear') {
+            number = '';
+            return _eventHandler.number(number);
+        }
+
+    } else {
+        return _eventHandler.operator(value);
+    }
 })
 
 
@@ -36,3 +45,11 @@ function addEventListener(option, callBack) {
 function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
+function isNumberOperator(value) {
+    const operator = 'eclear,clear,back';
+    return operator.includes(value);
+}
+
+
+
