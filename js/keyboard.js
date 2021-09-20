@@ -2,7 +2,6 @@ const get = document.getElementById.bind(document);
 const keyboard = get('keyboard');
 const _eventHandler = {};
 
-let keyboard_state = 0;
 let number = '';
 
 //================================ Keyboard API ===========================
