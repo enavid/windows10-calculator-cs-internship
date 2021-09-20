@@ -30,7 +30,10 @@ keyboard.addEventListener('click', (e) => {
         }
 
     } else {
-        return _eventHandler.operator(value);
+        // console.log(value)
+        if (single_operator(value)) {
+            return _eventHandler.single_operator(value);
+        }
     }
 })
 
@@ -47,6 +50,11 @@ function isNumber(n) {
 
 function isNumberOperator(value) {
     const operator = 'eclear,clear,back';
+    return operator.includes(value);
+}
+
+function single_operator(value) {
+    const operator = 'sqrt,power,oneDivision,';
     return operator.includes(value);
 }
 
