@@ -1,15 +1,27 @@
 const get = document.getElementById.bind(document);
 const create = document.createElement.bind(document);
 const disp = get('dis-number-p');
+const history = get('dis-history-p');
+
 //================================ Display API ===========================
-export default { render, renderZero };
+export default { render, renderZero, renderHistory };
 
 //=========================== Define display function ===================
 
 function render(value) {
-    disp.innerHTML = value;
+    const display = Object.values(value).filter((e) => {
+        return e != ''
+    });
+
+    const temp = display.join('');
+    temp == '' ? renderZero() : disp.innerHTML = temp;
 }
+
 function renderZero() {
-    render(0);
+    disp.innerHTML = '0';
+}
+
+function renderHistory(disp) {
+    history.innerHTML = disp;
 }
 

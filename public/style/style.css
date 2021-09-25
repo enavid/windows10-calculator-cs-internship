@@ -118,14 +118,22 @@ main {
 
 #dis-number {
     display: flex;
+    flex-direction: column;
     height: 60%;
     justify-content: flex-end;
-    align-items: center;
+    align-items: end;
 }
 
-#dis-number p {
-    font-size: 32px;
+#dis-number-p {
+    height: 65%;
+    font-size: 40px;
     font-weight: bold;
+    padding-right: 15px;
+}
+
+#dis-history-p {
+    height: 35%;
+    font-size: 20px;
     padding-right: 15px;
 }
 
