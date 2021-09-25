@@ -5,7 +5,7 @@ const history = [];
 
 //=========================== control event listener ====================
 _keyBoard.addEventListener('display', (input) => {
-    _display.render(input);
+    _display.render_history(input);
 
 })
 
@@ -18,20 +18,20 @@ _keyBoard.addEventListener('clear', (input) => {
 _keyBoard.addEventListener('single_operator', (input) => {
     if (input.first_number == '' && input.second_number == '') {
         input.first_number = single_calculator(input.first_number, input.operation);
-        _display.render(input.first_number);
+        _display.render_result(input.first_number);
     }
 
     else if (input.first_number != '' && input.operation != '') {
         const number = input.second_number == '' ? input.first_number : input.second_number;
         input.second_number = single_calculator(number, input.operation);
         input.operation = '';
-        _display.render(input.second_number);
+        _display.render_result(input.second_number);
     }
 
     else if (input.second_number == '') {
         input.first_number = single_calculator(input.first_number, input.operation);
         input.operation = '';
-        _display.render(input.first_number);
+        _display.render_result(input.first_number);
     }
     console.log(input);
 
@@ -63,7 +63,7 @@ _keyBoard.addEventListener('equal', (input) => {
     clear(input);
     input.first_number = final_result;
 
-    _display.render(input.first_number);
+    _display.render_result(input.first_number);
     console.log(input);
     console.log(history)
 })

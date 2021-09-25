@@ -4,24 +4,25 @@ const disp = get('dis-number-p');
 const history = get('dis-history-p');
 
 //================================ Display API ===========================
-export default { render, renderZero, renderHistory };
+export default { render_result, renderZero, render_history };
 
 //=========================== Define display function ===================
 
-function render(value) {
+function render_result(value) {
+    value == '' ? renderZero() : disp.innerHTML = value;
+}
+
+function render_history(value) {
     const display = Object.values(value).filter((e) => {
         return e != ''
     });
 
     const temp = display.join('');
-    temp == '' ? renderZero() : disp.innerHTML = temp;
+    temp == '' ? renderZero() : history.innerHTML = temp;
 }
 
 function renderZero() {
     disp.innerHTML = '0';
 }
 
-function renderHistory(disp) {
-    history.innerHTML = disp;
-}
 
