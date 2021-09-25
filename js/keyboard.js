@@ -34,6 +34,8 @@ keyboard.addEventListener('click', (e) => {
     }
 
     if (isNumber(value)) {
+        if ((input.first_number == '0' || input.second_number == '0') && value == '0') return;
+
         if (input.second_number == '' && input.second_sign == '') {
             input.first_number = input.first_number + value;
             return _eventHandler.display(input);
