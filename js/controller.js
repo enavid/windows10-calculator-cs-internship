@@ -33,11 +33,9 @@ _keyBoard.addEventListener('single_operator', (input) => {
         input.operation = '';
         _display.render_result(input.first_number);
     }
-    console.log(input);
 })
 
 _keyBoard.addEventListener('next_operation', (input) => {
-    console.log(input);
     input.final_result = double_calculator(input.first_number, input.second_number, input.first_sign, input.second_sign);
     history.push({ ...input });
     const final_result = input.final_result;
@@ -63,8 +61,7 @@ _keyBoard.addEventListener('equal', (input) => {
     input.first_number = final_result;
 
     _display.render_result(input.first_number);
-    console.log(input);
-    console.log(history)
+    _history.render(history)
 })
 
 // ========================== Define control function ==================

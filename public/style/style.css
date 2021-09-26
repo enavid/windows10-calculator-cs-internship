@@ -254,6 +254,32 @@ sup {
     padding: 5px;
 }
 
+#history-list {
+    display: flex;
+    flex-direction: column;
+
+
+    list-style: none;
+}
+
+#history-list li {}
+
+.history-item-expression {
+    display: flex;
+    font-size: 14px;
+    margin: 12px;
+    font-weight: normal;
+    justify-content: flex-end;
+    color: #8d8d8d;
+}
+
+.history-item-result {
+    display: flex;
+    margin: 12px;
+    justify-content: flex-end;
+    font-size: 22px;
+}
+
 /* width= 500px history disppear and keyboard change and history icon , M memory appear*/
 @media only screen and (max-width: 560px) {
     #container-1 {
