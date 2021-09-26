@@ -80,11 +80,11 @@ function double_calculator(first_number, second_number, sign1, sign2) {
             result = first_number - second_number;
             break;
         }
-        case '*': {
+        case '×': {
             result = first_number * second_number;
             break
         }
-        case '/': {
+        case '÷': {
             result = first_number / second_number;
             break;
         }

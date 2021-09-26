@@ -95,7 +95,7 @@ function single_operator(value) {
 }
 
 function double_operator(value) {
-    const operator = '+-×/';
+    const operator = '+-×÷';
     return operator.includes(value);
 }
 
