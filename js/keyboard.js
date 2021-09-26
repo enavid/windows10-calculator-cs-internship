@@ -37,9 +37,11 @@ keyboard.addEventListener('click', (e) => {
         if ((input.first_number == '0' || input.second_number == '0') && value == '0') return;
 
         if (input.second_number == '' && input.second_sign == '') {
+            if (value === '.' && input.first_number.includes('.')) return;
             input.first_number = input.first_number + value;
             return _eventHandler.display(input);
         } else if (input.first_number != '') {
+            if (value === '.' && input.second_number.includes('.')) return;
             input.second_number = input.second_number + value;
             return _eventHandler.display(input);
         }
@@ -77,8 +79,8 @@ function addEventListener(option, callBack) {
     _eventHandler[option] = callBack;
 }
 
-function isNumber(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
+function isNumber(value) {
+    return (!isNaN(parseFloat(value)) && isFinite(value)) || value == '.';
 }
 
 function isNumberOperator(value) {
@@ -96,6 +98,7 @@ function double_operator(value) {
     const operator = '+-*/';
     return operator.includes(value);
 }
+
 
 
 
