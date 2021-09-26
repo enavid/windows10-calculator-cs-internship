@@ -34,7 +34,6 @@ _keyBoard.addEventListener('single_operator', (input) => {
         _display.render_result(input.first_number);
     }
     console.log(input);
-
 })
 
 _keyBoard.addEventListener('next_operation', (input) => {
