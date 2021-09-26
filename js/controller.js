@@ -5,8 +5,9 @@ const history = [];
 
 //=========================== control event listener ====================
 _keyBoard.addEventListener('display', (input) => {
-    _display.render_history(input);
-
+    if (input.first_sign != '' || input.second_sign != '') _display.render_history(input);
+    if (input.first_number != '') return _display.render_result(input.first_number);
+    if (input.second_number != '') return _display.render_result(input.second_number);
 })
 
 _keyBoard.addEventListener('clear', (input) => {
