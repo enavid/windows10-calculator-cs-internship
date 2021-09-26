@@ -14,10 +14,10 @@ function render_result(value) {
 
 function render_history(value) {
     const display = Object.values(value).filter((e) => {
-        return e != ''
+        return e != '';
     });
-
-    const temp = display.join(' ');
+    let temp = display.join(' ');
+    if (temp.includes('=')) temp = temp.slice(0, temp.indexOf('=') + 1);
     temp == '' ? renderZero() : history.innerHTML = temp;
 }
 

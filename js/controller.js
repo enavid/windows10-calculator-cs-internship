@@ -59,11 +59,10 @@ _keyBoard.addEventListener('equal', (input) => {
 
     input.final_result = double_calculator(input.first_number, input.second_number, input.first_sign, input.second_sign);
     history.push({ ...input });
-
     const final_result = input.final_result;
     clear(input);
     input.first_number = final_result;
-    _display.render_history(input);
+    _display.render_history(history[history.length - 1]);
     _display.render_result(input.first_number);
     _history.render(history)
 })
