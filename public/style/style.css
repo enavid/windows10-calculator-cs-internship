@@ -130,15 +130,15 @@ main {
 }
 
 #dis-number-p {
-    height: 65%;
-    font-size: 40px;
+    height: 75%;
+    font-size: 44px;
     font-weight: bold;
     padding-right: 15px;
 }
 
 #dis-history-p {
-    height: 35%;
-    font-size: 20px;
+    height: 25%;
+    font-size: 14px;
     padding-right: 15px;
 }
 
@@ -157,10 +157,20 @@ main {
     align-items: center;
 }
 
+#memory-1 p {
+
+    font-size: 12px;
+}
+
 #memory-2 {
     visibility: hidden;
     justify-content: center;
     width: 0px;
+}
+
+#memory-2 p {
+
+    font-size: 12px;
 }
 
 .deactivate {
@@ -185,13 +195,17 @@ main {
 
 .color-white {
     background-color: #FEFEFE;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .color-gray {
     background-color: #F5F5F5;
     font-size: 20px;
+}
+
+.color-gray-font {
+    font-size: 16px;
 }
 
 .set-font-size {
