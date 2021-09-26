@@ -17,7 +17,7 @@ function render_history(value) {
         return e != ''
     });
 
-    const temp = display.join('');
+    const temp = display.join(' ');
     temp == '' ? renderZero() : history.innerHTML = temp;
 }
 

@@ -38,11 +38,15 @@ _keyBoard.addEventListener('single_operator', (input) => {
 _keyBoard.addEventListener('next_operation', (input) => {
     input.final_result = double_calculator(input.first_number, input.second_number, input.first_sign, input.second_sign);
     history.push({ ...input });
+
     const final_result = input.final_result;
     const next_operation = input.next_operation;
     clear(input);
     input.first_number = final_result;
     input.second_sign = next_operation;
+    _display.render_history(input);
+    _display.render_result(input.first_number);
+    _history.render(history)
 })
 
 _keyBoard.addEventListener('equal', (input) => {
@@ -59,7 +63,7 @@ _keyBoard.addEventListener('equal', (input) => {
     const final_result = input.final_result;
     clear(input);
     input.first_number = final_result;
-
+    _display.render_history(input);
     _display.render_result(input.first_number);
     _history.render(history)
 })
