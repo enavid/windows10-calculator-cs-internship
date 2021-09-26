@@ -1,6 +1,6 @@
 import _display from './display.js';
 import _keyBoard from './keyboard.js';
-
+import _history from './history.js';
 const history = [];
 
 //=========================== control event listener ====================

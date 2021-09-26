@@ -4,10 +4,14 @@ const _eventHandler = {};
 const history = get('his-message');
 
 //================================ History API ===========================
-export default { render };
+export default { render, addEventListener };
 
 //=========================== Define keyboard function ===================
 
 function addEventListener(option, callBack) {
     _eventHandler[option] = callBack;
+}
+
+function render() {
+
 }
