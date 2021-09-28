@@ -3,8 +3,15 @@ const create = document.createElement.bind(document);
 const _eventHandler = {};
 const _message = get('history-msg-p');
 const _list = get('history-msg-list');
+const _trash = get('history-trash');
 //================================ History API ===========================
-export default { render, addEventListener };
+export default { render, addEventListener, showMessage };
+
+//=========================== Keyboard event listener ====================
+_trash.addEventListener('click', (e) => {
+    e.preventDefault();
+    _eventHandler.trash('navid')
+})
 
 //=========================== Define keyboard function ===================
 
@@ -18,10 +25,9 @@ function render(historys) {
     historys.forEach(element => _list.prepend(creatItem(element)));
 }
 
-function renderSingleItem(element) {
-    _list.prepend(creatItem(element))
+function showMessage() {
+    _message.innerHTML = 'There\'s no history yet';
 }
-
 function creatItem(element) {
     const divTag1 = create('div');
     const divTag2 = create('div');

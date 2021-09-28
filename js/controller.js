@@ -1,7 +1,7 @@
 import _display from './display.js';
 import _keyBoard from './keyboard.js';
 import _history from './history.js';
-const history = [];
+let history = [];
 
 //=========================== control event listener ====================
 _keyBoard.addEventListener('display', (input) => {
@@ -66,6 +66,12 @@ _keyBoard.addEventListener('equal', (input) => {
     _display.render_history(history[history.length - 1]);
     _display.render_result(input.first_number);
     _history.render(history)
+})
+
+_history.addEventListener('trash', (value) => {
+    history = [];
+    _history.render(history);
+    _history.showMessage();
 })
 
 // ========================== Define control function ==================
