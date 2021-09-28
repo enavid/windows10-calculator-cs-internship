@@ -249,7 +249,8 @@ sup {
     border-bottom: 5px solid orange;
 }
 
-#his-message {
+#history-msg {
+    overflow-y: auto;
     font-weight: bold;
     padding: 5px;
 }
