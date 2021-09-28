@@ -4,6 +4,8 @@ const _eventHandler = {};
 const _message = get('history-msg-p');
 const _list = get('history-msg-list');
 const _trash = get('history-trash-img');
+const _history = get('history-memory-p1');
+const _memory = get('history-memory-p2');
 //================================ History API ===========================
 export default { render, addEventListener, showMessage };
 
@@ -11,6 +13,16 @@ export default { render, addEventListener, showMessage };
 _trash.addEventListener('click', (e) => {
     e.preventDefault();
     _eventHandler.trash('navid')
+})
+
+_history.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('history')
+})
+
+_memory.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('memory')
 })
 
 //=========================== Define keyboard function ===================
