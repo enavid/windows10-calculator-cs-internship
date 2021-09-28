@@ -3,7 +3,7 @@ const create = document.createElement.bind(document);
 const _eventHandler = {};
 const _message = get('history-msg-p');
 const _list = get('history-msg-list');
-const _trash = get('history-trash');
+const _trash = get('history-trash-img');
 //================================ History API ===========================
 export default { render, addEventListener, showMessage };
 
@@ -22,12 +22,15 @@ function addEventListener(option, callBack) {
 function render(historys) {
     _list.innerHTML = ' ';
     _message.innerHTML = '';
+    _trash.style.display = 'flex';
     historys.forEach(element => _list.prepend(creatItem(element)));
 }
 
 function showMessage() {
     _message.innerHTML = 'There\'s no history yet';
+    _trash.style.display = 'none';
 }
+
 function creatItem(element) {
     const divTag1 = create('div');
     const divTag2 = create('div');
@@ -44,8 +47,6 @@ function creatItem(element) {
     divTag2.innerHTML = context2;
     divTag2.classList.add('history-item-result')
     li.appendChild(divTag2);
-
-
 
     return li;
 }

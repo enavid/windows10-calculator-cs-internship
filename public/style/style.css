@@ -288,6 +288,7 @@ sup {
 }
 
 #history-trash img {
+    display: none;
     width: 35px;
     padding: 5px;
     margin: 15px;
