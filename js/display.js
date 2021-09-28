@@ -2,9 +2,23 @@ const get = document.getElementById.bind(document);
 const create = document.createElement.bind(document);
 const disp = get('dis-number-p');
 const history = get('dis-history-p');
+const _icon1 = get('dis-icon3');
+const _icon2 = get('nav-bar-img');
+const _nav = get('nav-bar');
 
 //================================ Display API ===========================
 export default { render_result, renderZero, render_history };
+
+//=========================== Display event listener ====================
+_icon1.addEventListener('click', (e) => {
+    e.preventDefault();
+    _nav.style.display = 'flex';
+})
+
+_icon2.addEventListener('click', (e) => {
+    e.preventDefault();
+    _nav.style.display = 'none';
+})
 
 //=========================== Define display function ===================
 

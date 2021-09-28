@@ -298,6 +298,77 @@ sup {
     background-color: #D3D3D3;
 }
 
+#nav-bar {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    /* overflow: 20; */
+    background-color: #f4f4f4;
+    width: 265px;
+    font-size: 14px;
+    z-index: 1;
+    transition: 0.5s;
+
+}
+
+#nav-bar-header {
+    display: flex;
+    align-items: center;
+    height: 8%;
+}
+
+#nav-bar-img {
+    width: 40px;
+    margin: 5px;
+    padding: 10px;
+}
+
+#nav-bar-img:hover {
+    background-color: #D3D3D3;
+}
+
+#nav-bar-header>p {
+    font-size: 20px;
+    margin: 5px;
+}
+
+#nav-bar-main {
+    height: 88%;
+    overflow-y: auto;
+}
+
+.nav-bar-main-item {
+    display: flex;
+    align-items: center;
+    height: 8%;
+    padding: 15px;
+}
+
+.nav-bar-main-header {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    height: 8%;
+    padding: 15px;
+}
+
+.nav-bar-main-item:hover {
+    background-color: #D3D3D3;
+}
+
+#nav-bar-footer {
+    display: flex;
+    align-items: center;
+    height: 8%;
+}
+
+#nav-bar-footer>img {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+
+}
+
 /* width= 500px history disppear and keyboard change and history icon , M memory appear*/
 @media only screen and (max-width: 560px) {
     #container-1 {
