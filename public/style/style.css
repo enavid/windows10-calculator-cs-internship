@@ -244,7 +244,7 @@ sup {
     margin: 5px;
 }
 
-#history-memory-p1 {
+.history-memory-active {
     padding-bottom: 0px;
     border-bottom: 5px solid orange;
 }

@@ -6,23 +6,36 @@ const _list = get('history-msg-list');
 const _trash = get('history-trash-img');
 const _history = get('history-memory-p1');
 const _memory = get('history-memory-p2');
+let _messages = 'There\'s no history yet';
+let _state = 'history';
 //================================ History API ===========================
-export default { render, addEventListener, showMessage };
+export default { addEventListener, render };
 
 //=========================== Keyboard event listener ====================
 _trash.addEventListener('click', (e) => {
     e.preventDefault();
-    _eventHandler.trash('navid')
+    _eventHandler.trash(_state);
 })
 
 _history.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('history')
+
+    _history.classList.add('history-memory-active');
+    _memory.classList.remove('history-memory-active');
+    _messages = 'There\'s no history yet';
+    _state = 'history';
+    _eventHandler.history();
 })
 
 _memory.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('memory')
+
+    _memory.classList.add('history-memory-active');
+    _history.classList.remove('history-memory-active');
+    _messages = 'There\'s nothing saved in memory';
+    _state = 'memory';
+    _eventHandler.memory();
+
 })
 
 //=========================== Define keyboard function ===================
@@ -31,16 +44,20 @@ function addEventListener(option, callBack) {
     _eventHandler[option] = callBack;
 }
 
-function render(historys) {
-    _list.innerHTML = ' ';
-    _message.innerHTML = '';
-    _trash.style.display = 'flex';
-    historys.forEach(element => _list.prepend(creatItem(element)));
-}
+function render(input) {
 
-function showMessage() {
-    _message.innerHTML = 'There\'s no history yet';
-    _trash.style.display = 'none';
+    _list.innerHTML = ' ';
+
+    if (input.length == 0) {
+        _message.innerHTML = _messages;
+        _trash.style.display = 'none';
+    }
+    else {
+        _message.innerHTML = '';
+        _trash.style.display = 'flex';
+    }
+
+    input.forEach(element => _list.prepend(creatItem(element)));
 }
 
 function creatItem(element) {
