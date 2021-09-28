@@ -2,7 +2,7 @@ const get = document.getElementById.bind(document);
 const create = document.createElement.bind(document);
 const _eventHandler = {};
 const _message = get('history-msg-p');
-const _list = get('history-list');
+const _list = get('history-msg-list');
 //================================ History API ===========================
 export default { render, addEventListener };
 

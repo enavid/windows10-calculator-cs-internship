@@ -229,14 +229,14 @@ sup {
     height: 100%;
 }
 
-#his-memory {
+#history-memory {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 10%;
 }
 
-#his-memory p {
+#history-memory>p {
     justify-self: center;
     font-size: 16px;
     font-weight: bold;
@@ -244,26 +244,27 @@ sup {
     margin: 5px;
 }
 
-#his-p {
+#history-p {
     padding-bottom: 0px;
     border-bottom: 5px solid orange;
 }
 
 #history-msg {
     overflow-y: auto;
+    height: 85%;
     font-weight: bold;
     padding: 5px;
 }
 
-#history-list {
-    display: flex;
-    flex-direction: column;
-
-
-    list-style: none;
+#history-msg-p {
+    font-weight: normal;
 }
 
-#history-list li {}
+#history-msg-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
 
 .history-item-expression {
     display: flex;
@@ -279,6 +280,21 @@ sup {
     margin: 12px;
     justify-content: flex-end;
     font-size: 22px;
+}
+
+#history-trash {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#history-trash img {
+    width: 35px;
+    padding: 5px;
+    margin: 15px;
+}
+
+#history-trash img:hover {
+    background-color: #D3D3D3;
 }
 
 /* width= 500px history disppear and keyboard change and history icon , M memory appear*/
