@@ -55,23 +55,27 @@ _keyBoard.addEventListener('next_operation', (input) => {
 })
 
 _keyBoard.addEventListener('equal', (input) => {
-    if (input.first_number == '' && input.second_number == '') {
-        input.first_number = '0';
-    }
-    else if (input.second_number == '' && input.second_sign == '') {
-        input.second_number = history[history.length - 1].second_number;
-        input.second_sign = history[history.length - 1].second_sign;
+
+    if (input.second_number == '' && input.second_sign == '') {
+
+        if (history.length === 0) {
+            input.first_number = '0';
+        }
+        else if (input.second_sign == '') {
+            input.first_number = history[history.length - 1].final_result;
+            input.second_number = history[history.length - 1].second_number;
+            input.second_sign = history[history.length - 1].second_sign;
+        }
     }
 
     input.final_result = double_calculator(input.first_number, input.second_number, input.first_sign, input.second_sign);
     history.push({ ...input });
     const final_result = input.final_result;
-    clear(input);
-
-    input.first_number = final_result;
     _display.render_history(history[history.length - 1]);
-    _display.render_result(input.first_number);
-    _history.render(history)
+    _display.render_result(input.final_result);
+    _history.render(history);
+    clear(input);
+    input.first_number = final_result;
 })
 
 _history.addEventListener('trash', () => {
@@ -96,6 +100,10 @@ _history.addEventListener('history', () => {
 })
 
 _history.addEventListener('memory', () => {
+    _history.render(memory);
+})
+
+_history.addEventListener('back', () => {
     _history.render(memory);
 })
 

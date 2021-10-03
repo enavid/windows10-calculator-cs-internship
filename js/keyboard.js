@@ -22,14 +22,21 @@ keyboard.addEventListener('click', (e) => {
     const value = e.target.getAttribute('value');
 
     if (isNumberOperator(value)) {
+        if (value === 'back' && input.final_result == '') {
+            if (input.first_number != '' && input.second_number == '') {
+                if (input.first_number.length == 1) input.first_number = '0';
+                else input.first_number = input.first_number.substring(0, input.first_number.length - 1);
 
-        if (value === 'back' && input.first_number != '') {
-            if (input.first_number.length == 1) input.first_number = '0';
-            else input.first_number = input.first_number.substring(0, input.first_number.length - 1);
+                return _eventHandler.display(input);
+            }
 
-            return _eventHandler.display(input);
+            else if (input.second_number != '') {
+                if (input.second_number.length == 1) input.second_number = '0';
+                else input.second_number = input.second_number.substring(0, input.second_number.length - 1);
+
+                return _eventHandler.display(input);
+            }
         }
-
         if (value === 'clear' || value === 'eclear') return _eventHandler.clear(input);
 
     }
@@ -46,7 +53,7 @@ keyboard.addEventListener('click', (e) => {
 
         else if (input.first_number != '' || input.second_sign != '') {
             if (value === '.' && input.second_number.includes('.')) return;
-            if (input.second_number == '0') input.second_number == '';
+            if (input.second_number == '0') input.second_number = '';
             input.second_number = input.second_number + value;
             return _eventHandler.display(input);
         }
@@ -73,7 +80,6 @@ keyboard.addEventListener('click', (e) => {
             input.next_operation = value;
             _eventHandler.next_operation(input);
         }
-        console.log(input)
     }
 
     if (value === '=') {
