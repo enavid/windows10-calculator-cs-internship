@@ -34,7 +34,10 @@ keyboard.addEventListener('click', (e) => {
     }
 
     if (isNumber(value)) {
-        if ((input.first_number == '0' || input.second_number == '0') && value == '0') return;
+        if (value == '0' && (input.first_number == '0' || input.second_number == '0')) return;
+
+        if (input.first_number == '0') input.first_number = '';
+        if (input.second_number == '0') input.second_number == '';
 
         if (input.second_number == '' && input.second_sign == '') {
             if (value === '.' && input.first_number.includes('.')) return;
