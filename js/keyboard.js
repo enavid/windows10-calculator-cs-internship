@@ -37,15 +37,16 @@ keyboard.addEventListener('click', (e) => {
     if (isNumber(value)) {
         if (value == '0' && (input.first_number == '0' || input.second_number == '0')) return;
 
-        if (input.first_number == '0') input.first_number = '';
-        if (input.second_number == '0') input.second_number == '';
-
         if (input.second_number == '' && input.second_sign == '') {
             if (value === '.' && input.first_number.includes('.')) return;
+            if (input.first_number == '0') input.first_number = '';
             input.first_number = input.first_number + value;
             return _eventHandler.display(input);
-        } else if (input.first_number != '') {
+        }
+
+        else if (input.first_number != '' || input.second_sign != '') {
             if (value === '.' && input.second_number.includes('.')) return;
+            if (input.second_number == '0') input.second_number == '';
             input.second_number = input.second_number + value;
             return _eventHandler.display(input);
         }
@@ -53,26 +54,33 @@ keyboard.addEventListener('click', (e) => {
 
     if (single_operator(value)) {
         input.operation = value;
+        if (input.first_number == '') input.first_number = '0';
         return _eventHandler.single_operator(input);
     }
 
     if (double_operator(value)) {
+
         if (input.first_number == '') {
-            input.first_sign = value;
-            return _eventHandler.display(input);
-        } else if (input.second_number == '') {
+            input.first_number = '0';
             input.second_sign = value;
-            return _eventHandler.display(input);
-        } else {
-            input.next_operation = value;
-            return _eventHandler.next_operation(input);
+            _eventHandler.display(input);
         }
+        else if (input.second_number == '') {
+            input.second_sign = value;
+            _eventHandler.display(input);
+        }
+        else {
+            input.next_operation = value;
+            _eventHandler.next_operation(input);
+        }
+        console.log(input)
     }
 
     if (value === '=') {
         input.operation = '=';
         return _eventHandler.equal(input);
     }
+
 
 })
 
