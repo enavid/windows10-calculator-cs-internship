@@ -55,9 +55,10 @@ _keyBoard.addEventListener('next_operation', (input) => {
 })
 
 _keyBoard.addEventListener('equal', (input) => {
-    if (input.first_number == '' && input.second_number == '') return;
-
-    if (input.second_number == '' && input.second_sign == '') {
+    if (input.first_number == '' && input.second_number == '') {
+        input.first_number = '0';
+    }
+    else if (input.second_number == '' && input.second_sign == '') {
         input.second_number = history[history.length - 1].second_number;
         input.second_sign = history[history.length - 1].second_sign;
     }
@@ -66,6 +67,7 @@ _keyBoard.addEventListener('equal', (input) => {
     history.push({ ...input });
     const final_result = input.final_result;
     clear(input);
+
     input.first_number = final_result;
     _display.render_history(history[history.length - 1]);
     _display.render_result(input.first_number);
@@ -101,6 +103,9 @@ _history.addEventListener('memory', () => {
 
 
 function double_calculator(first_number, second_number, sign1, sign2) {
+
+    if (sign1 == '' && sign2 == '') return '0';
+
     first_number = parseFloat(sign1 + first_number);
     second_number = parseFloat(second_number);
     let result = 0;
@@ -120,6 +125,9 @@ function double_calculator(first_number, second_number, sign1, sign2) {
         case '÷': {
             result = first_number / second_number;
             break;
+        }
+        default: {
+            result = '0';
         }
     }
     return result.toString();
