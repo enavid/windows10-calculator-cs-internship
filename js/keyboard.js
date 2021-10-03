@@ -21,11 +21,12 @@ keyboard.addEventListener('click', (e) => {
     e.preventDefault();
     const value = e.target.getAttribute('value');
 
-
     if (isNumberOperator(value)) {
 
         if (value === 'back' && input.first_number != '') {
-            input.first_number = input.first_number.substring(0, input.first_number.length - 1);
+            if (input.first_number.length == 1) input.first_number = '0';
+            else input.first_number = input.first_number.substring(0, input.first_number.length - 1);
+
             return _eventHandler.display(input);
         }
 

@@ -18,8 +18,16 @@ _keyBoard.addEventListener('clear', (input) => {
 })
 
 _keyBoard.addEventListener('single_operator', (input) => {
+    _display.render_history(input);
+
     if (input.first_number == '' && input.second_number == '') {
+        input.first_number = '0';
+        _display.render_result(input.first_number);
+    }
+
+    else if (input.second_number == '' && input.operation != '') {
         input.first_number = single_calculator(input.first_number, input.operation);
+        input.operation = '';
         _display.render_result(input.first_number);
     }
 
@@ -28,12 +36,7 @@ _keyBoard.addEventListener('single_operator', (input) => {
         input.second_number = single_calculator(number, input.operation);
         input.operation = '';
         _display.render_result(input.second_number);
-    }
 
-    else if (input.second_number == '') {
-        input.first_number = single_calculator(input.first_number, input.operation);
-        input.operation = '';
-        _display.render_result(input.first_number);
     }
 })
 
