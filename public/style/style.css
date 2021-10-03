@@ -302,13 +302,10 @@ sup {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    /* overflow: 20; */
     background-color: #f4f4f4;
     width: 265px;
     font-size: 14px;
     z-index: 1;
-    transition: 0.5s;
-
 }
 
 #nav-bar-header {
