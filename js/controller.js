@@ -13,7 +13,7 @@ _keyBoard.addEventListener('display', (input) => {
 
 _keyBoard.addEventListener('clear', (input) => {
     clear(input);
-    _display.render_history(input);
+    _display.clear_history(input);
     _display.renderZero();
 
 })

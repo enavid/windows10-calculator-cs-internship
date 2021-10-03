@@ -7,7 +7,7 @@ const _icon2 = get('nav-bar-img');
 const _nav = get('nav-bar');
 
 //================================ Display API ===========================
-export default { render_result, renderZero, render_history };
+export default { render_result, renderZero, render_history, clear_history };
 
 //=========================== Display event listener ====================
 _icon1.addEventListener('click', (e) => {
@@ -33,6 +33,9 @@ function render_history(value) {
     let temp = display.join(' ');
     if (temp.includes('=')) temp = temp.slice(0, temp.indexOf('=') + 1);
     temp == '' ? renderZero() : history.innerHTML = temp;
+}
+function clear_history() {
+    history.innerHTML = '';
 }
 
 function renderZero() {
