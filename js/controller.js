@@ -13,6 +13,7 @@ _keyBoard.addEventListener('display', (input) => {
 
 _keyBoard.addEventListener('clear', (input) => {
     clear(input);
+    _display.render_history(input);
     _display.renderZero();
 
 })
@@ -55,13 +56,15 @@ _keyBoard.addEventListener('next_operation', (input) => {
 })
 
 _keyBoard.addEventListener('equal', (input) => {
+    if (input.first_number != '' && input.second_number == '' && input.second_sign != '') {
+        input.second_number = '0';
+    }
+    if (input.second_number == '') {
 
-    if (input.second_number == '' && input.second_sign == '') {
-
-        if (history.length === 0) {
+        if (history.length === 0 && input.second_number == '') {
             input.first_number = '0';
         }
-        else if (input.second_sign == '') {
+        else {
             input.first_number = history[history.length - 1].final_result;
             input.second_number = history[history.length - 1].second_number;
             input.second_sign = history[history.length - 1].second_sign;
@@ -103,9 +106,6 @@ _history.addEventListener('memory', () => {
     _history.render(memory);
 })
 
-_history.addEventListener('back', () => {
-    _history.render(memory);
-})
 
 // ========================== Define control function ==================
 
