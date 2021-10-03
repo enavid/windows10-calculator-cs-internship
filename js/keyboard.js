@@ -93,7 +93,7 @@ function isNumberOperator(value) {
 }
 
 function single_operator(value) {
-    const operator = 'sqrt,power,oneDivision,';
+    const operator = '√,power,oneDivision,';
     return operator.includes(value);
 
 }

@@ -129,7 +129,7 @@ function double_calculator(first_number, second_number, sign1, sign2) {
 function single_calculator(number, operator) {
     let result = 0;
     switch (operator) {
-        case 'sqrt': {
+        case '√': {
             result = Math.sqrt(number);
             break;
         }
