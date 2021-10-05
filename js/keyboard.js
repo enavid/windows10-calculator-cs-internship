@@ -87,6 +87,28 @@ keyboard.addEventListener('click', (e) => {
         return _eventHandler.equal(input);
     }
 
+    if (value === 'negative') {
+        if (input.second_sign == '' && (input.first_sign == '' || input.first_sign == '+')) {
+            input.first_sign = '-';
+            return _eventHandler.negative(input.first_sign + input.first_number);
+        }
+
+        else if (input.second_sign == '' && input.first_sign == '-') {
+            input.first_sign = '';
+            return _eventHandler.negative(input.first_number);
+        }
+
+        else if (input.second_sign == '' || input.second_sign == '+') {
+            input.second_sign = '-';
+            return _eventHandler.negative(input.second_sign + input.second_number);
+        }
+
+        else if (input.second_sign == '-') {
+            input.second_sign = '+';
+            return _eventHandler.negative(input.second_number);
+        }
+    }
+
 
 })
 

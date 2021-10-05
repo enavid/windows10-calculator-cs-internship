@@ -81,6 +81,10 @@ _keyBoard.addEventListener('equal', (input) => {
     input.first_number = final_result;
 })
 
+_keyBoard.addEventListener('negative', (input) => {
+    _display.render_result(input);
+})
+
 _history.addEventListener('trash', () => {
     history = [];
     _history.render(history);
@@ -157,6 +161,7 @@ function single_calculator(number, operator) {
             result = Math.pow(number, 3);
             break;
         }
+
         case 'oneDivision': {
             result = number = 1 / number;
             break;
