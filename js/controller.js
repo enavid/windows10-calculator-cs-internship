@@ -92,7 +92,6 @@ _keyBoard.addEventListener('save_memory', (memory_data, input) => {
     memory_data.first_number = input.first_number === '' ? '0' : input.first_number;
     input.first_number = '';
     memory.push(memory_data);
-    console.log(memory);
     _display.activeMemory();
     _history.render(memory, 'memory');
 })
@@ -103,7 +102,6 @@ _keyBoard.addEventListener('operation_memory', (memory_data, input, operation) =
         memory_data.first_number = input.first_number;
         memory.push(memory_data);
         input.first_number = '';
-        console.log(memory);
     }
     else {
         const data = memory[memory.length - 1];
@@ -116,9 +114,6 @@ _keyBoard.addEventListener('operation_memory', (memory_data, input, operation) =
         }
 
         data.first_number = double_calculator(data.first_number, data.second_number, '', operation);
-        console.log(data.first_number);
-        console.log({ ...data })
-
     }
     _history.render(memory, 'memory');
 })
@@ -170,7 +165,6 @@ _history.addEventListener('clear_memory', (input) => {
 })
 
 _history.addEventListener('operation_memory', (input, operation) => {
-    console.log(input.second_number == '0');
     if (input.second_number == '0') input.second_number = input.first_number;
     input.first_number = double_calculator(input.first_number, input.second_number, '', operation);
     if (memory.length == 0) _display.deactiveMemory();
