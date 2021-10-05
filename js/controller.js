@@ -153,6 +153,10 @@ function single_calculator(number, operator) {
             result = Math.pow(number, 2);
             break;
         }
+        case 'cube': {
+            result = Math.pow(number, 3);
+            break;
+        }
         case 'oneDivision': {
             result = number = 1 / number;
             break;
