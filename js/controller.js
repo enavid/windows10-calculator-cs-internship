@@ -164,13 +164,16 @@ _history.addEventListener('memory', () => {
 
 
 _history.addEventListener('clear_memory', (input) => {
-    console.log('clear')
     memory.splice(memory.indexOf(input), 1)
     _history.render(memory, 'memory');
+    if (memory.length == 0) _display.deactiveMemory();
 })
 
 _history.addEventListener('operation_memory', (input, operation) => {
-    console.log('operation')
+    console.log(input.second_number == '0');
+    if (input.second_number == '0') input.second_number = input.first_number;
+    input.first_number = double_calculator(input.first_number, input.second_number, '', operation);
+    if (memory.length == 0) _display.deactiveMemory();
     _history.render(memory, 'memory');
 })
 
