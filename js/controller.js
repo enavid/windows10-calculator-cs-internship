@@ -127,7 +127,7 @@ _keyBoard.addEventListener('recall_memory', (input) => {
     const mem = memory[memory.length - 1];
     if (mem === undefined) return;
 
-    input.first_number = mem.last_result;
+    input.first_number = mem.first_number;
     _display.render_result(input.first_number);
 })
 
