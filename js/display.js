@@ -5,9 +5,10 @@ const history = get('dis-history-p');
 const _icon1 = get('dis-icon3');
 const _icon2 = get('nav-bar-img');
 const _nav = get('nav-bar');
-
+const _memory = document.getElementsByClassName('toggle');
+console.log(_memory)
 //================================ Display API ===========================
-export default { render_result, renderZero, render_history, clear_history };
+export default { render_result, renderZero, render_history, clear_history, activeMemory, deactiveMemory };
 
 //=========================== Display event listener ====================
 _icon1.addEventListener('click', (e) => {
@@ -42,4 +43,17 @@ function renderZero() {
     disp.innerHTML = '0';
 }
 
+function activeMemory() {
+    _memory[0].classList.remove('deactivate');
+    _memory[0].classList.add('activate');
+    _memory[1].classList.remove('deactivate');
+    _memory[1].classList.add('activate');
+}
+
+function deactiveMemory() {
+    _memory[0].classList.remove('activate');
+    _memory[0].classList.add('deactivate');
+    _memory[1].classList.remove('activate');
+    _memory[1].classList.add('deactivate');
+}
 

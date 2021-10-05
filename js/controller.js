@@ -93,6 +93,7 @@ _keyBoard.addEventListener('save_memory', (memory_data, input) => {
     input.first_number = '';
     memory.push(memory_data);
     console.log(memory);
+    _display.activeMemory();
 })
 
 _keyBoard.addEventListener('operation_memory', (memory_data, input, operation) => {
@@ -131,6 +132,7 @@ _keyBoard.addEventListener('recall_memory', (input) => {
 
 _keyBoard.addEventListener('clear_memory', () => {
     memory = [];
+    _display.deactiveMemory();
 })
 
 _history.addEventListener('trash', () => {
