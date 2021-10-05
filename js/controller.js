@@ -162,6 +162,18 @@ _history.addEventListener('memory', () => {
     _history.render(memory, 'memory');
 })
 
+
+_history.addEventListener('clear_memory', (input) => {
+    console.log('clear')
+    memory.splice(memory.indexOf(input), 1)
+    _history.render(memory, 'memory');
+})
+
+_history.addEventListener('operation_memory', (input, operation) => {
+    console.log('operation')
+    _history.render(memory, 'memory');
+})
+
 // ========================== Define control function ==================
 
 

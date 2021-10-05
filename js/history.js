@@ -78,6 +78,22 @@ function creatItemMemory(element) {
     spanTag1.innerHTML = 'MC';
     spanTag2.innerHTML = 'M+';
     spanTag3.innerHTML = 'M-';
+
+    spanTag1.addEventListener('click', (e) => {
+        e.preventDefault();
+        _eventHandler.clear_memory(element);
+    })
+
+    spanTag2.addEventListener('click', (e) => {
+        e.preventDefault();
+        _eventHandler.operation_memory(element, '+');
+    })
+
+    spanTag3.addEventListener('click', (e) => {
+        e.preventDefault();
+        _eventHandler.operation_memory(element, '-');
+    })
+
     divTag2.appendChild(spanTag1);
     divTag2.appendChild(spanTag2);
     divTag2.appendChild(spanTag3);
