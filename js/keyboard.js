@@ -1,5 +1,6 @@
 const get = document.getElementById.bind(document);
 const keyboard = get('keyboard');
+const _memory = get('memory-1')
 const _eventHandler = {};
 
 const input = {
@@ -11,10 +12,6 @@ const input = {
     operation: '',
     final_result: ''
 };
-
-const memory = {
-
-}
 
 //================================ Keyboard API ===========================
 export default { addEventListener };
@@ -115,7 +112,31 @@ keyboard.addEventListener('click', (e) => {
 
 })
 
+_memory.addEventListener('click', (e) => {
+    e.preventDefault();
+    const value = e.target.getAttribute('value');
 
+    if (value === 'MS') {
+        _eventHandler.save_memory({ first_number: input.first_number, last_result: '0' });
+    }
+
+    if (value === 'M-') {
+        _eventHandler.minus_memory()
+    }
+
+    if (value === 'M+') {
+        _eventHandler.positive_memory()
+    }
+
+    if (value === 'MR') {
+        _eventHandler.recall_memory(input)
+    }
+
+    if (value === 'MC') {
+        _eventHandler.clear_memory()
+    }
+
+})
 //=========================== Define keyboard function ===================
 
 function addEventListener(option, callBack) {

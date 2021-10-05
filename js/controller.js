@@ -85,6 +85,40 @@ _keyBoard.addEventListener('negative', (input) => {
     _display.render_result(input);
 })
 
+_keyBoard.addEventListener('save_memory', (input) => {
+    if (input.first_number == '' || input.first_number == '0') return;
+    console.log(input);
+    memory.push(input);
+})
+
+_keyBoard.addEventListener('minus_memory', () => {
+    const input = memory[memory.length - 1];
+    if (input === undefined) return;
+
+    input.last_result = double_calculator(input.last_result, input.first_number, '', '-');
+    console.log(input)
+})
+
+_keyBoard.addEventListener('positive_memory', () => {
+    const input = memory[memory.length - 1];
+    if (input === undefined) return;
+
+    input.last_result = double_calculator(input.last_result, input.first_number, '', '+');
+    console.log(input)
+})
+
+_keyBoard.addEventListener('recall_memory', (input) => {
+    const mem = memory[memory.length - 1];
+    if (mem === undefined) return;
+
+    input.first_number = mem.last_result;
+    _display.render_result(input.first_number);
+})
+
+_keyBoard.addEventListener('clear_memory', () => {
+    memory = [];
+})
+
 _history.addEventListener('trash', () => {
     history = [];
     _history.render(history);
@@ -109,7 +143,6 @@ _history.addEventListener('history', () => {
 _history.addEventListener('memory', () => {
     _history.render(memory);
 })
-
 
 // ========================== Define control function ==================
 
