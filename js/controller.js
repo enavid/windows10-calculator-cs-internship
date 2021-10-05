@@ -85,27 +85,41 @@ _keyBoard.addEventListener('negative', (input) => {
     _display.render_result(input);
 })
 
-_keyBoard.addEventListener('save_memory', (input) => {
-    if (input.first_number == '' || input.first_number == '0') return;
-    console.log(input);
-    memory.push(input);
+_keyBoard.addEventListener('save_memory', (memory_data, input) => {
+    if (memory.length !== 0 && input.first_number == '') {
+        input.first_number = memory[memory.length - 1].first_number;
+    }
+    memory_data.first_number = input.first_number === '' ? '0' : input.first_number;
+    input.first_number = '';
+    memory.push(memory_data);
+    console.log(memory);
 })
 
-_keyBoard.addEventListener('minus_memory', () => {
-    const input = memory[memory.length - 1];
-    if (input === undefined) return;
+_keyBoard.addEventListener('operation_memory', (memory_data, input, operation) => {
 
-    input.last_result = double_calculator(input.last_result, input.first_number, '', '-');
-    console.log(input)
+    if (memory.length == 0) {
+        memory_data.first_number = input.first_number;
+        memory.push(memory_data);
+        input.first_number = '';
+        console.log(memory);
+    }
+    else {
+        const data = memory[memory.length - 1];
+        if (input.first_number == '' && data.second_number == '0') {
+            data.second_number = data.first_number;
+        }
+        else if (input.first_number != '') {
+            data.second_number = input.first_number;
+            input.first_number = '';
+        }
+
+        data.first_number = double_calculator(data.first_number, data.second_number, '', operation);
+        console.log(data.first_number);
+        console.log({ ...data })
+
+    }
 })
 
-_keyBoard.addEventListener('positive_memory', () => {
-    const input = memory[memory.length - 1];
-    if (input === undefined) return;
-
-    input.last_result = double_calculator(input.last_result, input.first_number, '', '+');
-    console.log(input)
-})
 
 _keyBoard.addEventListener('recall_memory', (input) => {
     const mem = memory[memory.length - 1];

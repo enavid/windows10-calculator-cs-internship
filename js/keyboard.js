@@ -116,16 +116,23 @@ _memory.addEventListener('click', (e) => {
     e.preventDefault();
     const value = e.target.getAttribute('value');
 
+    const data = {
+        first_number: '0',
+        second_number: '0',
+        last_result: '0'
+    };
+
     if (value === 'MS') {
-        _eventHandler.save_memory({ first_number: input.first_number, last_result: '0' });
+        _eventHandler.save_memory(data, input);
     }
 
     if (value === 'M-') {
-        _eventHandler.minus_memory()
+        _eventHandler.operation_memory(data, input, '-');
     }
 
     if (value === 'M+') {
-        _eventHandler.positive_memory()
+        data.second_number = input.second_number;
+        _eventHandler.operation_memory(data, input, '+');
     }
 
     if (value === 'MR') {
@@ -135,7 +142,6 @@ _memory.addEventListener('click', (e) => {
     if (value === 'MC') {
         _eventHandler.clear_memory()
     }
-
 })
 //=========================== Define keyboard function ===================
 
