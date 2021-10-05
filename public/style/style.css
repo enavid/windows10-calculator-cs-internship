@@ -177,6 +177,14 @@ main {
     opacity: 0.4;
 }
 
+.activate {
+    padding: 12px 30px 12px 30px;
+}
+
+.activate:hover {
+    background-color: #D3D3D3;
+}
+
 /* ------------------- keyboard --------------------- */
 #keyboard {
     display: grid;

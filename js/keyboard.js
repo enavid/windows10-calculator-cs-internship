@@ -12,6 +12,10 @@ const input = {
     final_result: ''
 };
 
+const memory = {
+
+}
+
 //================================ Keyboard API ===========================
 export default { addEventListener };
 
@@ -108,7 +112,6 @@ keyboard.addEventListener('click', (e) => {
             return _eventHandler.negative(input.second_number);
         }
     }
-
 
 })
 
