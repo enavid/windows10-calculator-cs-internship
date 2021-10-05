@@ -119,7 +119,6 @@ _memory.addEventListener('click', (e) => {
     const data = {
         first_number: '0',
         second_number: '0',
-        last_result: '0'
     };
 
     if (value === 'MS') {

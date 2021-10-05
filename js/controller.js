@@ -52,7 +52,7 @@ _keyBoard.addEventListener('next_operation', (input) => {
     input.second_sign = next_operation;
     _display.render_history(input);
     _display.render_result(input.first_number);
-    _history.render(history)
+    _history.render(history, 'history')
 })
 
 _keyBoard.addEventListener('equal', (input) => {
@@ -76,7 +76,7 @@ _keyBoard.addEventListener('equal', (input) => {
     const final_result = input.final_result;
     _display.render_history(history[history.length - 1]);
     _display.render_result(input.final_result);
-    _history.render(history);
+    _history.render(history, 'history')
     clear(input);
     input.first_number = final_result;
 })
@@ -94,6 +94,7 @@ _keyBoard.addEventListener('save_memory', (memory_data, input) => {
     memory.push(memory_data);
     console.log(memory);
     _display.activeMemory();
+    _history.render(memory, 'memory');
 })
 
 _keyBoard.addEventListener('operation_memory', (memory_data, input, operation) => {
@@ -119,8 +120,8 @@ _keyBoard.addEventListener('operation_memory', (memory_data, input, operation) =
         console.log({ ...data })
 
     }
+    _history.render(memory, 'memory');
 })
-
 
 _keyBoard.addEventListener('recall_memory', (input) => {
     const mem = memory[memory.length - 1];
@@ -133,31 +134,32 @@ _keyBoard.addEventListener('recall_memory', (input) => {
 _keyBoard.addEventListener('clear_memory', () => {
     memory = [];
     _display.deactiveMemory();
+    _history.render(memory, 'memory');
 })
 
 _history.addEventListener('trash', () => {
     history = [];
-    _history.render(history);
+    _history.render(history, 'history')
 })
 
 _history.addEventListener('trash', (state) => {
 
     if (state == 'history') {
         history = [];
-        _history.render(history);
+        _history.render(history, 'history')
     }
     else if (state == 'memory') {
         memory = [];
-        _history.render(memory);
+        _history.render(history, 'history')
     }
 })
 
 _history.addEventListener('history', () => {
-    _history.render(history);
+    _history.render(history, 'history');
 })
 
 _history.addEventListener('memory', () => {
-    _history.render(memory);
+    _history.render(memory, 'memory');
 })
 
 // ========================== Define control function ==================

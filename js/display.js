@@ -6,7 +6,7 @@ const _icon1 = get('dis-icon3');
 const _icon2 = get('nav-bar-img');
 const _nav = get('nav-bar');
 const _memory = document.getElementsByClassName('toggle');
-console.log(_memory)
+
 //================================ Display API ===========================
 export default { render_result, renderZero, render_history, clear_history, activeMemory, deactiveMemory };
 

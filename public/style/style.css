@@ -173,6 +173,38 @@ main {
     font-size: 12px;
 }
 
+.memory-item-container:hover {
+    background-color: #D3D3D3;
+}
+
+.memory-item-result {
+    display: flex;
+    font-size: 24px;
+    margin: 12px 12px 6px 12px;
+    padding: 12px;
+    font-weight: bold;
+    justify-content: flex-end;
+}
+
+.memory-item-btn {
+    display: flex;
+    padding: 5px 30px 5px 30px;
+    justify-content: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 12px 12px 12px;
+}
+
+.memory-item-btn span {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.memory-item-btn span:hover {
+    background-color: #E2E2E2;
+    cursor: pointer;
+}
+
 .deactivate {
     opacity: 0.4;
 }
@@ -288,6 +320,10 @@ sup {
     margin: 12px;
     justify-content: flex-end;
     font-size: 22px;
+}
+
+.history-item-container:hover {
+    background-color: #D3D3D3;
 }
 
 #history-trash {
