@@ -28,13 +28,23 @@ function render_result(value) {
 }
 
 function render_history(value) {
-    const display = Object.values(value).filter((e) => {
-        return e != '';
-    });
-    let temp = display.join(' ');
-    if (temp.includes('=')) temp = temp.slice(0, temp.indexOf('=') + 1);
-    temp == '' ? renderZero() : history.innerHTML = temp;
+
+    if (single_operator(value.operation) && value.operation != '') {
+        history.innerHTML = value.operation + '(' + value.first_number + ')'
+    }
+
+    else {
+        const display = Object.values(value).filter((e) => {
+            return e != '';
+        });
+
+        let temp = display.join(' ');
+        if (temp.includes('=')) temp = temp.slice(0, temp.indexOf('=') + 1);
+        temp == '' ? renderZero() : history.innerHTML = temp;
+    }
+
 }
+
 function clear_history() {
     history.innerHTML = '';
 }
@@ -55,5 +65,11 @@ function deactiveMemory() {
     _memory[0].classList.add('deactivate');
     _memory[1].classList.remove('activate');
     _memory[1].classList.add('deactivate');
+}
+
+function single_operator(value) {
+    const operator = '√,sqr,1/,cube';
+    return operator.includes(value);
+
 }
 

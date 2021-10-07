@@ -222,7 +222,7 @@ function single_calculator(number, operator) {
             break;
         }
 
-        case 'oneDivision': {
+        case '1/': {
             result = number = 1 / number;
             break;
         }

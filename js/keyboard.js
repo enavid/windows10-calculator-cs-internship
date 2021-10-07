@@ -158,7 +158,7 @@ function isNumberOperator(value) {
 }
 
 function single_operator(value) {
-    const operator = '√,sqr,oneDivision,cube';
+    const operator = '√,sqr,1/,cube';
     return operator.includes(value);
 
 }
