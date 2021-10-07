@@ -213,7 +213,7 @@ function single_calculator(number, operator) {
             result = Math.sqrt(number);
             break;
         }
-        case 'power': {
+        case 'sqr': {
             result = Math.pow(number, 2);
             break;
         }
