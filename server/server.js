@@ -7,7 +7,6 @@ const PORT = 3000;
 
 
 server.on('request', (req, res) => {
-    // routes.get('/', controller.indexHtml, { req, res });
     routes.static(controller.staticFiles, { req, res });
 })
 
