@@ -8,16 +8,13 @@ function staticFiles(req, res) {
         if (error) {
             res.writeHead(404);
             res.write('Not found error 404');
-            res.end()
+            return res.end()
         }
-        else {
 
-            if (req.url.includes('js')) res.setHeader('Content-Type', 'application/javascript');
-
-            res.writeHead(200);
-            res.write(data);
-            res.end();
-        }
+        if (req.url.includes('js')) res.setHeader('Content-Type', 'application/javascript');
+        res.writeHead(200);
+        res.write(data);
+        res.end();
     });
 }
 
