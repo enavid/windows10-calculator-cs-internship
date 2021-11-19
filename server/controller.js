@@ -1,11 +1,24 @@
-const readFile = require('./utils');
-
-function indexHtml(req, res) {
-    readFile({ url: '/index.html' }, res);
-}
+const readFile = require('./utils/readFile');
 
 function staticFiles(req, res) {
-    readFile(req, res);
+    const url = req.url === '/' ? '/index.html' : req.url;
+
+    readFile(url, (error, data) => {
+
+        if (error) {
+            res.writeHead(404);
+            res.write('Not found error 404');
+            res.end()
+        }
+        else {
+
+            if (req.url.includes('js')) res.setHeader('Content-Type', 'application/javascript');
+
+            res.writeHead(200);
+            res.write(data);
+            res.end();
+        }
+    });
 }
 
-module.exports = { indexHtml, staticFiles };
+module.exports = { staticFiles };
