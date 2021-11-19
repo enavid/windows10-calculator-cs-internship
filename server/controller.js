@@ -24,4 +24,4 @@ function readFile(req, res) {
     })
 }
 
-module.exports = indexHtml;
+module.exports = { indexHtml, readFile };

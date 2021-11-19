@@ -1,9 +1,13 @@
-const indexHtml = require('./controller');
+function static(func, { req, res }) {
+    if (req.method !== 'GET') return;
+    func(req, res)
+}
 
-let routes = {
-    'GET': {
-        '/': indexHtml,
+function get(url, func, { req, res }) {
+    if (req.method !== 'GET') return;
+    if (req.url === url) {
+        func(req, res)
     }
 }
 
-module.exports = routes;
+module.exports = { static, get };
