@@ -1,2 +1,2 @@
-# windows10-calculator-cs_internship
+# windows10-calculator-cs-internship
 This project for cs_internship course.
